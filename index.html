@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You 💕</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #love-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: pink;
+            text-align: center;
+            animation: colorChange 2s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: pink; }
+            25% { color: red; }
+            50% { color: hotpink; }
+            75% { color: violet; }
+            100% { color: pink; }
+        }
+    </style>
+</head>
+<body>
+    <div id="love-text"></div>
+
+    <script>
+        const message = "I Love You 💕";
+        const loveText = document.getElementById("love-text");
+        let i = 0;
+
+        function typeMessage() {
+            if (i <= message.length) {
+                loveText.textContent = message.slice(0, i);
+                i++;
+            } else {
+                i = 0; // loop
+            }
+        }
+
+        setInterval(typeMessage, 300); // type speed
+    </script>
+</body>
+</html>
